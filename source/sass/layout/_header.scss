@@ -1,0 +1,63 @@
+.main-header {
+  $link-color: #003d7c;
+  $link-color-active: #0088ff;
+
+  font-family: ITCAvantGardeBk;
+
+  .navbar {
+    @include transition(all .25s ease);
+    background-color: #ffffff;
+    box-shadow: 0 1px #ffffff inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    &.scrolling {
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+    }
+  }
+
+  .nav-link {
+    color: $link-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $link-color-active;
+    }
+
+    @media (min-width: 768px) {
+      &:after {
+        @include scale(0);
+        @include transition(transform .25s ease-in-out);
+        content: '';
+        display: block;
+        border-bottom: solid 2px $link-color-active;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+
+        &:after {
+          @include scale(1);
+        }
+      }
+    }
+  }
+
+  .navbar-toggler-icon {
+    .fa {
+      line-height: 1.5em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .navbar-expand-md .navbar-nav .nav-item {
+      .nav-link {
+        padding-right: 1.2rem;
+        padding-left: 1.2rem;
+      }
+    }
+  }
+}

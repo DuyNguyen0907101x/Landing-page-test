@@ -1,0 +1,278 @@
+/*
+* Sliders
+*/
+.slider {
+  // common styles of sliders
+  $arrow-color: #818181;
+  $arrow-color-hover: lighten($arrow-color, 15%);
+  padding: 2rem 0;
+
+  // override slick carousel styles
+  .slick-slide {
+    outline: 0;
+  }
+
+  .slick-prev,
+  .slick-next {
+    @include transition(all .25s ease);
+    width: auto;
+    height: auto;
+    font-size: 3rem;
+    color: $arrow-color;
+    
+    &:before {
+      content: none;
+    }
+
+    &:hover {
+      color: $arrow-color-hover;
+    }
+  }
+
+  &.shops-slider {
+    $arrow-color: #c9c9c9;
+    $arrow-color-hover: darken($arrow-color, 15%);
+    .slick-slide {
+      img {
+        width: 100%;
+      }
+    }
+
+    .slick-prev,
+    .slick-next {
+      @include translate(0, -50%);
+      top: 50%;
+      font-size: 2rem;
+      color: $arrow-color;
+
+      &:hover {
+        color: $arrow-color-hover;
+      }
+    }
+  }
+
+  &.iphone-slider {
+    padding: 0;
+    background-color: #ffffff;
+    margin-top: 65px;
+    margin-left: 26px;
+    width: 80%;
+    height: 75%;
+
+    .slick-slide {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &.features-slider {
+    .slick-track {
+      padding: 3rem 0;
+    }
+
+    .slick-slide {
+      .slide-content {
+        background-color: #ffffff;
+        height: 250px;
+        text-align: center;
+        margin: 1.25rem;
+        position: relative;
+        border-radius: 2px;
+        padding: 2rem 1rem 1rem;
+        transition: all .25s ease-in-out;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+
+        dt {
+          font-weight: 700;
+          margin-bottom: .825rem;
+        }
+
+        dd {
+          font-size: .825rem;
+          margin-bottom: 0;
+        }
+
+        .icon {
+          @include translate(-50%, -50%);
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 25%;
+        }
+      }
+    }
+    
+    .slick-center {
+      .slide-content {
+        @include scale(1.2);
+        .icon {
+          width: 26%;
+        }
+        
+      }
+    }
+
+    .slick-prev,
+    .slick-next {
+      top: 50%;
+      @include translate(0, -50%);
+    }
+  }
+
+  &.partners-slider {
+    $blue: #006ae2;
+    $dot-bg-color: #d9d9d9;
+    $dot-bg-color-hover: $blue; 
+
+    .slick-slide {
+      outline: 0;
+
+      img {
+        margin: auto;
+      }
+
+      .author-name {
+        color: $blue;
+        font-weight: 700;
+        margin-bottom: .5rem;
+        margin-top: 2rem;
+      }
+
+      .occupation {
+        text-transform: uppercase;
+
+        @media (min-width: 768px) {
+          margin-bottom: 2.5rem;
+        }
+      }
+    }
+
+    .slick-prev,
+    .slick-next {
+      top: 22%;
+    }
+
+    .slick-dots {
+      button {
+        background-color: $dot-bg-color;
+        border-radius: 50%;
+        @include transition(background-color .3s ease);
+
+        &:before {
+          content: none;
+        }
+      }
+
+      .slick-active {
+        button {
+          background-color: $blue;
+        }
+      }
+    }
+  }
+}
+
+.iphone-slider {
+  // &-container,
+  // &-controls {
+  //   @media (min-width: 992px) {
+  //     position: absolute;
+  //   }
+  // }
+
+  &-container {
+    width: 280px;
+    height: 520px;
+    background: url('../images/iphone-frame.png') no-repeat center center;
+    background-size: cover;
+    margin: auto;
+    overflow-y: auto;
+
+    @media (min-width: 992px) {
+      position: absolute;
+      bottom: 7%;
+      right: 5%;
+    }
+
+    @media (min-width: 1200px) {
+      position: absolute;
+      bottom: 7%;
+      right: 10%;
+    }
+  }
+
+  &-controls {
+    margin: 1rem auto;
+    position: relative;
+
+    small {
+      color: #000000;
+    }
+
+    .iphone-slider {
+      &-prev,
+      &-next {
+        @include translate(0, -50%);
+        @include transition(color .25s ease);
+        position: absolute;
+        top: 50%;
+        font-size: 3rem;
+        color: #d9d9d9;
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: #2b9cff;
+        }
+      }
+
+      &-prev {
+        left: 15%;
+      }
+
+      &-next {
+        right: 15%;
+      }
+
+      @media (min-width: 992px) {
+        @include translate(-50%, 0);
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        &-prev {
+          left: -8%;
+        }
+
+        &-next {
+          right: -8%;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        &-prev {
+          left: -15%;
+        }
+
+        &-next {
+          right: -15%;
+        }
+      }
+    }
+
+    @media (min-width: 992px) {
+      @include translate(-50%, 0);
+      position: absolute;
+      top: 60%;
+      left: 50%;
+    }
+  }
+
+  // @media (min-width: 992px) {
+  //   &-container,
+  //   &-controls {
+  //     position: absolute;
+  //   }
+  // }
+}
+

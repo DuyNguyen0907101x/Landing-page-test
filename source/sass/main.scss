@@ -2,8 +2,12 @@
 @import 'abstracts/mixins';
 
 @import 'vendors/bootstrap-override-variable';
+
 @import 'bootstrap';
 @import 'font-awesome';
+@import 'slick.scss';
+@import 'slick-theme.scss';
+
 
 @import 'base/typography';
 @import 'base/colors';
@@ -14,5 +18,6 @@
 
 @import 'components/button';
 @import 'components/ui-elements';
+@import 'components/sliders';
 
 @import 'pages/home';

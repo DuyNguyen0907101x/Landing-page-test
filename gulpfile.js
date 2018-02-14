@@ -37,8 +37,9 @@ var scss = {
     precison: 3,
     errLogToConsole: true,
     includePaths: [
-      './node_modules/bootstrap-sass/assets/stylesheets',
-      './node_modules/font-awesome/scss/'
+      './node_modules/bootstrap/scss/',
+      './node_modules/font-awesome/scss/',
+      './node_modules/slick-carousel/slick/'
     ]
   }
 };
@@ -48,17 +49,26 @@ var scss = {
 var fonts = {
   in: [
     source + 'fonts/*.*',
-    './node_modules/bootstrap-sass/assets/fonts/**/*.*',
-    './node_modules/font-awesome/fonts/*', source + 'fonts-2/**/*'
+    './node_modules/font-awesome/fonts/*', source + 'fonts-2/**/*',
+    './node_modules/slick-carousel/slick/fonts/*'
   ],
   out: dest + 'fonts/'
+};
+var slickFonts = {
+  in: [
+    './node_modules/slick-carousel/slick/fonts/*',
+  ],
+  out: dest + 'css/fonts/'
 };
 
 // js
 var js = {
   in: [
     source + 'js/*.*',
-    './node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js'
+    './node_modules/jquery/dist/jquery.min.js',
+    './node_modules/bootstrap/dist/js/bootstrap.min.js',
+    './node_modules/slick-carousel/slick/slick.min.js',
+    './node_modules/scrollreveal/dist/scrollreveal.min.js'
   ],
   out: dest + 'js/'
 };
@@ -103,6 +113,12 @@ gulp.task('fonts', function () {
     .pipe(gulp.dest(fonts.out));
 });
 
+gulp.task('slickFonts', function () {
+  return gulp
+    .src(slickFonts.in)
+    .pipe(gulp.dest(slickFonts.out));
+});
+
 // = Delete
 gulp.task('cleanup', function (cb) {
   return del(options.del, cb);
@@ -123,7 +139,7 @@ gulp.task('build', function (cb) {
 
 // = Build Style
 
-gulp.task('compile-styles',['fonts'], function (cb) {
+gulp.task('compile-styles',['fonts', 'slickFonts'], function (cb) {
   return gulp.src([
     source + '/sass/*.scss',
     '!'+ source +'/sass/_*.scss'
@@ -160,7 +176,7 @@ gulp.task('build-html', function (cb) {
 
 // = Build JS
 
-gulp.task('compile-js', function() {
+gulp.task('compile-js', ['js'], function() {
   return gulp.src(["*.js", "!_*.js"], {cwd: 'source/js'})
   .pipe($.include(options.include))
   .pipe(gulp.dest(dest + '/js'));
