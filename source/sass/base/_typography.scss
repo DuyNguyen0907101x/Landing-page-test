@@ -1,0 +1,50 @@
+/*
+* Font 
+*/
+
+@font-face {
+  font-family: HelveticaNeueLt;
+  src: url('../fonts/HelveticaNeueLTStd-Lt.otf');
+}
+
+@font-face {
+  font-family: ITCAvantGardeBk;
+  src: url('../fonts/ITCAvantGardeStd-Bk.otf');
+}
+
+@font-face {
+  font-family: ITCAvantGardeMd;
+  src: url('../fonts/ITCAvantGardeStd-Md.otf');
+}
+
+html, body {
+  font-family: HelveticaNeueLt;
+}
+
+/*
+* Heading of page sections
+*/
+.section-heading {
+  font-family: ITCAvantGardeBk;
+  font-size: 2.5rem;
+}
+
+/*
+* Title & sub-title of section contents
+*/
+.paragraph {
+  &-title {
+    font-family: ITCAvantGardeMd;
+  }
+  &-subtitle {
+
+  }
+}
+// .title {
+//   font-family: ITCAvantGardeMd;
+
+//   &-lg {
+//     font-family: ITCAvantGardeBk;
+//     font-size: 2.5rem;
+//   }
+// }

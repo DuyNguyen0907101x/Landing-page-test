@@ -1,3 +1,140 @@
 .home-page {
-  background-color: #d8d8d8;
+  $light-grey: #ececec;
+  #section-1 {
+    margin-top: 84px;
+  }
+
+  #section-2 {
+    background-color: $light-grey;
+    padding-top: 3rem;
+
+    .paragraph {
+      margin-top: 15%;
+    }
+  }
+
+  #section-3 {
+    padding-top: 3rem;
+
+    .paragraph {
+      @media (min-width: 768px) {
+        margin-top: 30%;
+      }
+    }
+  }
+
+  #section-4 {
+    background-color: $light-grey;
+    padding: 3rem 0;
+  }
+
+  #section-5 {
+    padding: 3rem 0;
+
+    .section-top {
+      border-bottom: 1px solid #cccccc;
+
+      .view-more-btn {
+        padding-top: .825rem;
+        padding-bottom: .825rem;
+        margin-bottom: 4rem;
+        text-transform: uppercase;
+        min-width: 190px;
+        font-size: small;
+      }
+    }
+  }
+
+  /*
+  * Sliders
+  */
+  .features-slider {
+    .slick-slide {
+      outline: 0;
+      // background-color: #ffffff;
+      // height: 250px;
+      // text-align: center;
+      // margin: auto 1rem;
+
+      .slide-content {
+        background-color: #ffffff;
+        height: 250px;
+        text-align: center;
+        margin: auto 1rem;
+      }
+    }
+    
+    .slick-center {
+      .slide-content {
+        transform: scale(1.1);
+      }
+      // .paragraph-title {
+      //   transform: scale(1.2);
+      // }
+    }
+  }
+
+  .partners-slider {
+    $blue: #006ae2;
+
+    .slick-slide {
+      outline: 0;
+
+      img {
+        margin: auto;
+      }
+
+      .author-name {
+        color: $blue;
+        font-weight: 700;
+        margin-bottom: .5rem;
+        margin-top: 2rem;
+      }
+
+      .occupation {
+        text-transform: uppercase;
+
+        @media (min-width: 768px) {
+          margin-bottom: 2.5rem;
+        }
+      }
+    }
+
+    .slick-prev,
+    .slick-next {
+      // override slick carousel styles
+      width: auto;
+      height: auto;
+      font-size: 3rem;
+      color: #818181;
+      transition: all .25s ease;
+      top: 22%;
+      
+      &:before {
+        content: none;
+      }
+
+      &:hover {
+        color: rgba(129, 129, 129, .6);
+      }
+    }
+
+    .slick-dots {
+      button {
+        background-color: #d9d9d9;
+        border-radius: 50%;
+        transition: background-color .25s ease;
+
+        &:before {
+          content: none;
+        }
+      }
+
+      .slick-active {
+        button {
+          background-color: $blue;
+        }
+      }
+    }
+  }
 }
