@@ -1,12 +1,12 @@
 {
-  "name": "colantotte-front",
+  "name": "Beeketing",
   "version": "1.0.0",
-  "description": "",
+  "description": "Landing page HTML/CSS/JS small test",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "DuyNT",
   "license": "ISC",
   "devDependencies": {
     "bootstrap": "^4.0.0",

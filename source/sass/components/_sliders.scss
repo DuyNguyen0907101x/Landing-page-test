@@ -174,13 +174,6 @@
 }
 
 .iphone-slider {
-  // &-container,
-  // &-controls {
-  //   @media (min-width: 992px) {
-  //     position: absolute;
-  //   }
-  // }
-
   &-container {
     width: 280px;
     height: 520px;
@@ -267,12 +260,12 @@
       left: 50%;
     }
   }
+}
 
-  // @media (min-width: 992px) {
-  //   &-container,
-  //   &-controls {
-  //     position: absolute;
-  //   }
-  // }
+.curve-arrow {
+  position: absolute;
+  top: 44%;
+  left: 56%;
+  width: 150px;
 }
 
