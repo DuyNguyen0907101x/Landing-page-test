@@ -1,0 +1,61 @@
+.main-footer {
+  height: 600px;
+  background: 
+    linear-gradient(rgba(22, 55, 108, .7), rgba(22, 55, 108, .7)),
+    url('../images/Layer 4 copy.jpg') no-repeat center center fixed;
+  position: relative;
+  padding: 3rem 0;
+  color: #ffffff;
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(7, 17, 48, .8);
+  }
+
+  .section-heading {
+    text-transform: uppercase;
+  }
+
+  .start-btn {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    min-width: 150px;
+    margin: 3rem 0;
+  }
+
+  .menu {
+    list-style: none;
+    margin: 3.5rem 0;
+    padding: 0;
+
+    li {
+      padding: .5rem 1.5rem;
+      background-color: #071130;
+
+      &:first-child {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+
+      a {
+        @include transition(color .25s ease);
+        color: #ffffff;
+
+        &:hover,
+        &:active,
+        &:focus {
+          text-decoration: none;
+          color: #0355a6;
+        }
+      }
+    }
+  }
+}

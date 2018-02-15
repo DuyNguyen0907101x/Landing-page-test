@@ -1,3 +1,77 @@
 .home-page {
-  background-color: #d8d8d8;
+  $light-grey: #ececec;
+
+  section:nth-child(even) {
+    background-color: $light-grey;
+  }
+
+  #section-1 {
+    margin-top: 70px;
+    position: relative;
+    
+    .bg {
+      color: #ffffff;
+      padding-top: 5rem;
+      min-height: 450px;
+      background: 
+        linear-gradient(rgba(16, 39, 76, 0.67), rgba(22, 55, 108, 0.75)), 
+        url('../images/city-landscape.jpg') no-repeat center center;
+      background-size: cover;
+    }
+
+    .section-heading {
+      margin-bottom: 5rem;
+    }
+
+    .start-btn {
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+      min-width: 165px;
+    }
+  }
+
+  #section-2 {
+    padding-top: 3rem;
+
+    .paragraph {
+      @media (min-width: 768px) {
+        margin-top: 15%;
+      }
+    }
+  }
+
+  #section-3 {
+    padding-top: 3rem;
+
+    .paragraph {
+      @media (min-width: 768px) {
+        margin-top: 30%;
+      }
+    }
+  }
+
+  #section-4 {
+    padding: 3rem 0 1rem;
+  }
+
+  #section-5 {
+    padding: 3rem 0;
+
+    .section-top {
+      border-bottom: 1px solid #cccccc;
+
+      .view-more-btn {
+        padding-top: .825rem;
+        padding-bottom: .825rem;
+        margin-bottom: 4rem;
+        text-transform: uppercase;
+        min-width: 190px;
+        font-size: small;
+      }
+    }
+  }
+
+  #section-6 {
+
+  }
 }
